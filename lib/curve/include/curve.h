@@ -9,3 +9,6 @@ float curve_gamma(float x, float gamma);  // 0..1 -> 0..1 (Wahrnehmung)
 
 // Spezielle Kurven
 float curve_night(float x);               // fürs Nachtlicht (0..1 -> 0..1)
+
+// Für Alarm/Sunrise
+float curve_sunrise(float x);

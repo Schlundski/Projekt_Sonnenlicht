@@ -6,7 +6,7 @@ static Preferences prefs;
 
 static const char* NS = "wecker";
 
-// Kleine Helper: prüft, ob wir schon initial gespeichert haben
+// prüfen, ob wir schon initial gespeichert haben
 static bool has_init_flag() {
   prefs.begin(NS, true);
   bool ok = prefs.getBool("init", false);
@@ -27,7 +27,7 @@ void settings_reset_defaults() {
   settings.alarm_max_duration_min = 20; // 0 = unbegrenzt
 
   // --- Nachtlicht ---
-  settings.night_channel = NightChannel::Warm;
+  settings.night_channel = NightChannel::Both;
   settings.night_override_enabled = false; // Standard: Poti
   settings.night_override_level = 15;      // fallback, falls Override an
 

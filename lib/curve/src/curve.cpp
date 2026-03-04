@@ -20,7 +20,14 @@ float curve_gamma(float x, float gamma) {
 
 // Nachtlicht: unten fein, oben schneller
 float curve_night(float x) {
-  // Du kannst den Gamma-Wert später easy anpassen:
-  // höher = feinere Kontrolle im dunklen Bereich
   return curve_gamma(x, 2.6f);
+}
+
+// Sunrise: weich starten/enden, insgesamt "natürlich"
+float curve_sunrise(float x) {
+  // weiche Anfahr- und Abflach-Phase
+  // Optional zusätzlich leichtes Gamma für gefühlte Helligkeit
+  return curve_gamma(curve_smoothstep(x), 2.2f);
+  // heller/früher: 1.8f
+  // "dunkel" bleiben: 2.6f
 }
